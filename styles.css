@@ -114,7 +114,6 @@ body {
 .white-div {
   background: white;
   color: black;
-  height: 1000px;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
   display: flex;
@@ -153,4 +152,70 @@ body {
 
 .white-div .we-scale h2 {
   font-size: 55px;
+}
+
+.we-scale {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.we-scale button {
+  margin-top: 30px;
+  color: white;
+  background: green;
+  border: 1px solid green;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.we-scale .scale-list {
+  display: flex;
+  gap: 35px;
+  width: 100%;
+  margin-top: 120px;
+}
+
+.we-scale .scale-list .scale-one {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  border-radius: 35px;
+  position: relative;
+}
+
+.we-scale .scale-list .scale-one img {
+  position: relative;
+  top: -70px;
+}
+
+.we-scale .scale-list .scale-one h2 {
+  font-size: 35px;
+  margin-left: 30px;
+}
+
+.we-scale .scale-list .scale-one p {
+  margin-left: 30px;
+}
+
+.we-scale .scale-list .scale-green {
+  background: rgba(124, 204, 108);
+  box-shadow: 2px 3px 45px 0px #2dbd5de3;
+}
+
+.we-scale .scale-list .scale-purple {
+  background: rgba(189, 122, 179);
+  box-shadow: 2px 3px 45px 0px #bb2c9396;
+}
+
+.we-scale .scale-list .scale-orange {
+  background: rgba(255, 143, 28);
+  box-shadow: 2px 3px 45px 0px #ff8e0099;
+}
+
+.we-scale .scale-list .scale-blue {
+  background: rgba(74, 201, 227);
+  box-shadow: 2px 3px 45px 0px #00c9e7ad;
 }
