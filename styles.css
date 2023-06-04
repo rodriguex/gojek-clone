@@ -102,10 +102,10 @@ body {
 }
 
 .we-gojek button {
+  border: none;
   margin-top: 20px;
   color: white;
   background: green;
-  border: 1px solid green;
   padding: 10px 20px;
   border-radius: 25px;
   font-weight: bold;
@@ -119,6 +119,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 80px;
 }
 
 .white-div div span,
@@ -162,10 +163,10 @@ body {
 }
 
 .we-scale button {
+  border: none;
   margin-top: 30px;
   color: white;
   background: green;
-  border: 1px solid green;
   padding: 10px 20px;
   border-radius: 25px;
   font-weight: bold;
@@ -181,7 +182,7 @@ body {
 .we-scale .scale-list .scale-one {
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 360px;
   border-radius: 35px;
   position: relative;
 }
@@ -189,6 +190,7 @@ body {
 .we-scale .scale-list .scale-one img {
   position: relative;
   top: -70px;
+  max-height: 216px;
 }
 
 .we-scale .scale-list .scale-one h2 {
@@ -198,6 +200,8 @@ body {
 
 .we-scale .scale-list .scale-one p {
   margin-left: 30px;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .we-scale .scale-list .scale-green {
@@ -218,4 +222,478 @@ body {
 .we-scale .scale-list .scale-blue {
   background: rgba(74, 201, 227);
   box-shadow: 2px 3px 45px 0px #00c9e7ad;
+}
+
+.first-slider {
+  background: #bcbcbc;
+  height: 970px;
+}
+
+.join-the-ride .picture {
+  height: 420px;
+  background: #451c1c;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.join-the-ride .picture h2 {
+  font-size: 65px;
+  margin-top: 70px;
+}
+
+.join-the-ride .boxes {
+  position: relative;
+  top: -120px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.join-the-ride .boxes .box {
+  background: rgba(24, 36, 48);
+  border-radius: 40px;
+  height: 330px;
+  width: 430px;
+}
+
+.join-the-ride .boxes .box img {
+  position: relative;
+  top: -40px;
+}
+
+.join-the-ride .boxes .box h3 {
+  margin-top: -15px;
+  font-size: 28px;
+}
+
+.join-the-ride .boxes .box p {
+  margin-top: 20px;
+  font-size: 15px;
+  max-width: 75%;
+}
+
+.join-the-ride .boxes .box button {
+  margin-top: 40px;
+}
+
+.join-the-ride .boxes .box img,
+.join-the-ride .boxes .box h3,
+.join-the-ride .boxes .box p,
+.join-the-ride .boxes .box button {
+  margin-left: 60px;
+}
+
+.join-the-ride .boxes .box button {
+  margin-top: 30px;
+  color: white;
+  background: green;
+  border: 1px solid green;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.perks {
+  background: white;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  padding: 100px 0;
+}
+
+.perks h2 {
+  color: black;
+  text-align: center;
+  font-size: 50px;
+}
+
+.perks .second-slider {
+  margin-top: 70px;
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+}
+
+.perks .second-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.perks .second-slider .slider {
+  flex: 0 0 45%;
+  height: 400px;
+  background-color: gray;
+  border-radius: 50px;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+}
+
+.perks .second-slider .slider h4 {
+  font-size: 26px;
+}
+
+.perks .second-slider .slider div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.perks .second-slider .slider h4,
+.perks .second-slider .slider p {
+  color: black;
+}
+
+.perks .second-slider .slider button {
+  margin-top: 20px;
+  border: none;
+  color: white;
+  background: green;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.we-build {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.we-build .text {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.we-build .text h2 {
+  font-size: 50px;
+  width: 40%;
+  text-align: center;
+}
+
+.we-build .text button {
+  border: none;
+  margin-top: 30px;
+  color: white;
+  background: green;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.we-build .cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  max-width: 95%;
+  margin: 250px auto 0 auto;
+  transform: skewY(-10deg);
+}
+
+.we-build .cards .card {
+  width: 260px;
+  height: 400px;
+  background: gray;
+  border-radius: 30px;
+  transform: skew(10deg);
+  position: relative;
+}
+
+.we-build .cards .card .imgs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  margin-left: 30px;
+}
+
+.we-build .cards .card .bg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.we-build .cards .card .imgs img {
+  width: 110px;
+  z-index: 30;
+}
+
+.we-build .cards .card .imgs p {
+  z-index: 30;
+}
+
+.we-build .cards .card-one {
+  background: rgba(147, 50, 142);
+}
+
+.we-build .cards .card-two {
+  background: rgba(223, 25, 149);
+}
+
+.we-build .cards .card-three {
+  background: rgba(0, 170, 19);
+}
+
+.we-build .cards .card-four {
+  background: rgba(0, 174, 214);
+}
+
+.we-build .cards .card-five {
+  background: rgba(238, 39, 55);
+}
+
+.we-build .items {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.we-build .items div {
+  display: flex;
+  gap: 50px;
+}
+
+.we-build .items button {
+  margin-top: 10px;
+  color: white;
+  background: green;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: none;
+}
+
+.we-build .end {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  gap: 180px;
+}
+
+.we-build .end div {
+  margin-top: 80px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.we-build .end div h3 {
+  font-size: 50px;
+}
+
+.we-build .end div button {
+  width: fit-content;
+  margin-top: 20px;
+  color: white;
+  background: green;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: none;
+}
+
+.earth {
+  background: rgba(74, 201, 227);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.earth .first-text {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.earth .first-text h2 {
+  color: black;
+  font-size: 50px;
+  width: 70%;
+  text-align: center;
+}
+
+.earth .first-text button {
+  border: none;
+  margin-top: 30px;
+  color: white;
+  background: green;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.earth .globe {
+  width: 100%;
+  margin: 100px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.earth .globe img {
+  width: 50%;
+  rotate: 270deg;
+  z-index: 20;
+}
+
+.earth .globe .cloud {
+  width: 70%;
+  position: absolute;
+  top: 40px;
+  rotate: 0deg;
+  z-index: 10;
+}
+
+.phone {
+  width: 100%;
+  background: rgba(24, 36, 48);
+  position: relative;
+}
+
+.phone img {
+  width: 100%;
+}
+
+.phone .good-to-go {
+  position: absolute;
+  top: 33%;
+  left: 12%;
+}
+
+.phone .good-to-go h3 {
+  font-size: 52px;
+}
+
+.phone .good-to-go .stores {
+  margin-top: 40px;
+  display: flex;
+  gap: 25px;
+}
+
+.phone .good-to-go .stores button {
+  background: white;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 25px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.phone .good-to-go .stores i,
+.phone .good-to-go .stores span {
+  color: black;
+  font-weight: bold;
+}
+
+.footer {
+  padding: 70px 0;
+  position: relative;
+}
+
+.footer .all-list {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff1a;
+  padding-bottom: 60px;
+}
+
+.footer .first {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .first .links-list {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .first .links-list span {
+  font-size: 18px;
+}
+
+.footer .first .links-list .bold {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.footer .first .links-list div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer .first .links-list .icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer .second {
+  margin-top: 80px;
+}
+
+.footer .second .flex {
+  display: flex;
+  gap: 120px;
+}
+
+.footer .second span {
+  font-size: 17px;
+  text-decoration: underline;
+}
+
+.footer .second .list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer .second p {
+  margin-top: 40px;
+  width: 90%;
+  font-size: 16px;
+}
+
+.footer .second .selects {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  position: absolute;
+  right: 0;
+}
+
+.footer .second .selects > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer .second .selects > div span {
+  text-decoration: none;
+}
+
+.footer .second .selects > div > div {
+  border: 1px solid #ffffff1c;
+  padding: 12px;
+  width: 250px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer .second .selects > div > div > i {
+  font-size: 12px;
 }
