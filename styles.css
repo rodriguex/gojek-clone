@@ -16,6 +16,22 @@ body {
   background: rgba(16, 24, 32);
 }
 
+.video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  user-select: none;
+  pointer-events: none;
+  margin-top: -60px;
+}
+
 .max-width {
   width: 100%;
   max-width: 1370px;
@@ -72,25 +88,6 @@ body {
 
 .navbar-links > div:hover {
   border-bottom: 1px solid white;
-}
-
-.video {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.video iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  pointer-events: none;
-  user-select: none;
-}
-
-.content {
-  position: relative;
-  top: 100px;
 }
 
 .we-gojek {
