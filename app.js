@@ -1,4 +1,20 @@
-let initialScroll = 0;
+function setGojekVideo() {
+  new YT.Player("player", {
+    height: "100%",
+    width: "100%",
+    videoId: "VJH5FJ5kaJA",
+    playerVars: {
+      playsinline: 1,
+      mute: 1,
+      controls: 0,
+      disablekb: 1,
+      loop: 1,
+    },
+    events: {
+      onReady: (event) => event.target.playVideo(),
+    },
+  });
+}
 
 function setNavbar(event) {
   let nav = document.getElementsByClassName("navbar")[0];
@@ -15,36 +31,42 @@ function setNavbar(event) {
   initialScroll = newScroll;
 }
 
-document.addEventListener("scroll", (event) => {
-  setNavbar(event);
-});
+function setFirstSlider() {
+  setInterval(() => {
+    if (whichOne > 0) {
+      if (whichOne + 1 <= maxIndex) {
+        whichOne++;
+      } else {
+        whichOne = 0;
+      }
 
-var tag = document.createElement("script");
-tag.src = "https://www.youtube.com/iframe_api";
+      if (whichOne === maxIndex) {
+        prev = 0;
+      } else {
+        prev = whichOne - 1;
+      }
+      sliders[prev].style.display = "none";
+    }
 
-var firstScriptTag = document.getElementsByTagName("script")[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    sliders[whichOne].style.display = "block";
 
-var player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player("player", {
-    height: "100%",
-    width: "100%",
-    videoId: "VJH5FJ5kaJA",
-    playerVars: {
-      playsinline: 1,
-      mute: 1,
-      controls: 0,
-      disablekb: 1,
-      loop: 1,
-    },
-    events: {
-      onReady: onPlayerReady,
-    },
+    if (whichOne === 0) {
+      whichOne++;
+    }
+  }, 2000);
+}
+
+let initialScroll = 0;
+let whichOne = 0;
+let prev = 0;
+let maxIndex = 3;
+let sliders = document.getElementsByClassName("first-slider-img");
+
+window.addEventListener("load", () => {
+  setGojekVideo();
+  setFirstSlider();
+
+  document.addEventListener("scroll", (event) => {
+    setNavbar(event);
   });
-}
-
-function onPlayerReady(event) {
-  console.log(event);
-  event.target.playVideo();
-}
+});

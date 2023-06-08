@@ -231,27 +231,45 @@ body {
 }
 
 .first-slider {
-  background: #bcbcbc;
-  height: 970px;
+  width: 100%;
+  height: auto;
+}
+
+.first-slider img {
+  width: 100%;
+  display: none;
+}
+
+.join-the-ride .overlay {
+  background: #00000057;
+  position: relative;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
 }
 
 .join-the-ride .picture {
-  height: 420px;
-  background: #451c1c;
+  height: 560px;
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
   display: flex;
   justify-content: center;
+  background-image: url("imgs/joinTheRide.webp");
+  background-size: 100%;
+  opacity: 0.5;
 }
 
-.join-the-ride .picture h2 {
+.join-the-ride h2 {
+  position: absolute;
+  top: 230px;
   font-size: 65px;
-  margin-top: 70px;
+  z-index: 30;
+  width: 100%;
+  text-align: center;
 }
 
 .join-the-ride .boxes {
   position: relative;
-  top: -120px;
+  top: -90px;
   display: flex;
   gap: 40px;
   justify-content: center;
