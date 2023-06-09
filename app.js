@@ -31,40 +31,71 @@ function setNavbar(event) {
   initialScroll = newScroll;
 }
 
-function setFirstSlider() {
-  setInterval(() => {
-    if (whichOne > 0) {
-      if (whichOne + 1 <= maxIndex) {
-        whichOne++;
-      } else {
-        whichOne = 0;
-      }
-
-      if (whichOne === maxIndex) {
-        prev = 0;
-      } else {
-        prev = whichOne - 1;
-      }
-      sliders[prev].style.display = "none";
-    }
-
-    sliders[whichOne].style.display = "block";
-
-    if (whichOne === 0) {
+function sliderLogic(action) {
+  let equal = false;
+  function nextOne() {
+    if (whichOne === maxIndex) {
+      whichOne = 0;
+      equal = true;
+    } else {
       whichOne++;
+      equal = false;
     }
-  }, 2000);
+  }
+
+  function prevOne() {
+    if (whichOne === 0) {
+      whichOne = maxIndex;
+      equal = true;
+    } else {
+      whichOne--;
+      equal = false;
+    }
+  }
+
+  if (action === "next") {
+    nextOne();
+  } else {
+    prevOne();
+  }
+
+  let prev = whichOne - 1;
+  if (equal) {
+    prev = maxIndex;
+  } else if (prev === -1) {
+    return;
+  }
+
+  console.log(whichOne, prev);
+
+  if (prev !== -1) {
+    sliders[prev].style.display = "none";
+    indicators[prev].style.background = "gray";
+  }
+
+  sliders[whichOne].style.display = "block";
+  indicators[whichOne].style.background = "red";
+}
+
+function nextSlide() {
+  sliderLogic("next");
+}
+
+function prevSlide() {
+  sliderLogic("prev");
 }
 
 let initialScroll = 0;
+let sliders = document.getElementsByClassName("first-slider-img");
+let indicators = document.getElementsByClassName("span-indicator");
 let whichOne = 0;
 let prev = 0;
 let maxIndex = 3;
-let sliders = document.getElementsByClassName("first-slider-img");
 
 window.addEventListener("load", () => {
-  setGojekVideo();
-  setFirstSlider();
+  // setGojekVideo();
+  sliders[0].style.display = "block";
+  indicators[0].style.background = "red";
 
   document.addEventListener("scroll", (event) => {
     setNavbar(event);
