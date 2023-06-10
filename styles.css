@@ -55,7 +55,7 @@ body {
   height: 100px;
   position: fixed;
   top: 0;
-  z-index: 30;
+  z-index: 40;
 }
 
 .navbar-background {
@@ -374,7 +374,7 @@ body {
 .perks .second-slider {
   margin-top: 70px;
   display: flex;
-  gap: 40px;
+  gap: 20px;
   overflow-x: auto;
 }
 
@@ -384,32 +384,44 @@ body {
 
 .perks .second-slider .slider {
   flex: 0 0 45%;
-  height: 400px;
-  background-color: gray;
-  border-radius: 50px;
-  flex-direction: column;
+  background: url("imgs/perksOne.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 450px;
+  border-radius: 60px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 40px;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-.perks .second-slider .slider h4 {
+/* .perks .second-slider .slider img {
+  width: 900px;
+  height: 400px;
+} */
+
+.perks .second-slider .slider .div-slider {
+  width: 90%;
+  position: relative;
+  top: -20px;
+}
+
+.perks .second-slider .slider .div-slider h4 {
   font-size: 26px;
 }
 
-.perks .second-slider .slider div {
+.perks .second-slider .slider .div-slider div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.perks .second-slider .slider h4,
-.perks .second-slider .slider p {
-  color: black;
+.perks .second-slider .slider .div-slider h4,
+.perks .second-slider .slider .div-slider p {
+  color: white;
 }
 
-.perks .second-slider .slider button {
+.perks .second-slider .slider .div-slider button {
   margin-top: 20px;
   border: none;
   color: white;

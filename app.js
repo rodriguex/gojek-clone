@@ -31,25 +31,26 @@ function setNavbar(event) {
   initialScroll = newScroll;
 }
 
-function sliderLogic(action) {
-  let equal = false;
+function sliderLogic(action = "next") {
+  pausedAutomatic = true;
+
   function nextOne() {
     if (whichOne === maxIndex) {
       whichOne = 0;
-      equal = true;
+      prev = maxIndex;
     } else {
       whichOne++;
-      equal = false;
+      prev = whichOne - 1;
     }
   }
 
   function prevOne() {
     if (whichOne === 0) {
       whichOne = maxIndex;
-      equal = true;
+      prev = 0;
     } else {
       whichOne--;
-      equal = false;
+      prev = whichOne + 1;
     }
   }
 
@@ -59,22 +60,13 @@ function sliderLogic(action) {
     prevOne();
   }
 
-  let prev = whichOne - 1;
-  if (equal) {
-    prev = maxIndex;
-  } else if (prev === -1) {
-    return;
-  }
-
-  console.log(whichOne, prev);
-
-  if (prev !== -1) {
-    sliders[prev].style.display = "none";
-    indicators[prev].style.background = "gray";
-  }
-
+  sliders[prev].style.display = "none";
   sliders[whichOne].style.display = "block";
+
+  indicators[prev].style.background = "gray";
   indicators[whichOne].style.background = "red";
+
+  pausedAutomatic = false;
 }
 
 function nextSlide() {
@@ -86,14 +78,24 @@ function prevSlide() {
 }
 
 let initialScroll = 0;
+
 let sliders = document.getElementsByClassName("first-slider-img");
 let indicators = document.getElementsByClassName("span-indicator");
+
 let whichOne = 0;
 let prev = 0;
 let maxIndex = 3;
+let pausedAutomatic = false;
+
+let automaticSlider = setInterval(() => {
+  if (!pausedAutomatic) {
+    sliderLogic();
+  }
+}, 2000);
 
 window.addEventListener("load", () => {
-  // setGojekVideo();
+  setGojekVideo();
+
   sliders[0].style.display = "block";
   indicators[0].style.background = "red";
 
