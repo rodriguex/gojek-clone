@@ -77,6 +77,19 @@ function prevSlide() {
   sliderLogic("prev");
 }
 
+function nextSecondSlider() {
+  secondSlider.scrollLeft += 1000;
+  console.log(secondSlider.offsetWidth);
+  console.log(secondSlider.scrollLeft + 1000);
+}
+
+function prevSecondSlider() {
+  if (secondSlider.scrollLeft - 1000 <= 0) {
+    secondSliderSliders[1].before(secondSliderSliders[0]);
+  }
+  secondSlider.scrollLeft -= 1000;
+}
+
 let initialScroll = 0;
 
 let sliders = document.getElementsByClassName("first-slider-img");
@@ -87,6 +100,12 @@ let prev = 0;
 let maxIndex = 3;
 let pausedAutomatic = false;
 
+let secondSlider = document.getElementsByClassName("second-slider")[0];
+secondSlider.scrollLeft = 350;
+
+let secondSliderSliders = document.getElementsByClassName("slider");
+let arrows = document.getElementsByClassName("arrows")[0];
+
 let automaticSlider = setInterval(() => {
   if (!pausedAutomatic) {
     sliderLogic();
@@ -94,7 +113,7 @@ let automaticSlider = setInterval(() => {
 }, 2000);
 
 window.addEventListener("load", () => {
-  setGojekVideo();
+  // setGojekVideo();
 
   sliders[0].style.display = "block";
   indicators[0].style.background = "red";
@@ -102,4 +121,12 @@ window.addEventListener("load", () => {
   document.addEventListener("scroll", (event) => {
     setNavbar(event);
   });
+
+  // secondSlider.addEventListener("mouseenter", () => {
+  //   arrows.style.display = "flex";
+  // });
+
+  // secondSlider.addEventListener("mouseleave", () => {
+  //   arrows.style.display = "none";
+  // });
 });

@@ -363,6 +363,7 @@ body {
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
   padding: 100px 0;
+  position: relative;
 }
 
 .perks h2 {
@@ -376,6 +377,35 @@ body {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.perks .arrows {
+  position: absolute;
+  top: 400px;
+  left: 40px;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.perks .arrows > div {
+  background: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.perks .arrows > div:hover {
+  background: #ccc;
+}
+
+.perks .arrows > div > i {
+  color: black;
 }
 
 .perks .second-slider::-webkit-scrollbar {
