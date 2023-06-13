@@ -414,15 +414,36 @@ body {
 
 .perks .second-slider .slider {
   flex: 0 0 45%;
-  background: url("imgs/perksOne.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 1000px;
   height: 450px;
   border-radius: 60px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+}
+
+.perks .second-slider .slider-one {
+  background: url("imgs/perksOne.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.perks .second-slider .slider-two {
+  background: url("imgs/perksTwo.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.perks .second-slider .slider-three {
+  background: url("imgs/perksThree.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.perks .second-slider .slider-four {
+  background: url("imgs/perksFour.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* .perks .second-slider .slider img {
