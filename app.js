@@ -18,15 +18,22 @@ function setGojekVideo() {
 
 function setNavbar(event) {
   let nav = document.getElementsByClassName("navbar")[0];
+  let navLink = document.getElementsByClassName("nav-link");
   let newScroll = event.target.documentElement.scrollTop;
 
   if (newScroll === 0) {
     nav.classList.remove("navbar-background");
+    for (let i = 0; i < navLink.length; i++) {
+      navLink[i].style.color = "black";
+    }
   } else if (initialScroll < newScroll) {
     nav.style.display = "none";
   } else {
     nav.style.display = "flex";
     nav.classList.add("navbar-background");
+    for (let i = 0; i < navLink.length; i++) {
+      navLink[i].style.color = "white";
+    }
   }
   initialScroll = newScroll;
 }
@@ -78,15 +85,13 @@ function prevSlide() {
 }
 
 function nextSecondSlider() {
+  if (secondSlider.scrollLeft + 1000 >= secondSlider.offsetWidth) {
+    secondSlider.appendChild(secondSliderSliders[0]);
+  }
   secondSlider.scrollLeft += 1000;
-  console.log(secondSlider.offsetWidth);
-  console.log(secondSlider.scrollLeft + 1000);
 }
 
 function prevSecondSlider() {
-  if (secondSlider.scrollLeft - 1000 <= 0) {
-    secondSliderSliders[1].before(secondSliderSliders[0]);
-  }
   secondSlider.scrollLeft -= 1000;
 }
 
