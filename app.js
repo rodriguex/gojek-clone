@@ -67,11 +67,11 @@ function sliderLogic(action = "next") {
     prevOne();
   }
 
-  sliders[prev].style.display = "none";
-  sliders[whichOne].style.display = "block";
+  // sliders[prev].style.display = "none";
+  // sliders[whichOne].style.display = "block";
 
-  indicators[prev].style.background = "gray";
-  indicators[whichOne].style.background = "red";
+  // indicators[prev].style.background = "gray";
+  // indicators[whichOne].style.background = "white";
 
   pausedAutomatic = false;
 }
@@ -115,7 +115,7 @@ function prevSecondSlider() {
 let initialScroll = 0;
 
 let sliders = document.getElementsByClassName("first-slider-img");
-let indicators = document.getElementsByClassName("span-indicator");
+let indicators = document.getElementsByClassName("bar")[0];
 
 let whichOne = 0;
 let prev = 0;
@@ -132,14 +132,32 @@ let indexTrack = 3;
 let automaticSlider = setInterval(() => {
   if (!pausedAutomatic) {
     sliderLogic();
+    sliders[prev].style.display = "none";
+    sliders[whichOne].style.display = "block";
+
+    // indicators[prev].style.background = "gray";
   }
 }, 2000);
+
+let size = 10;
+function aaa() {
+  console.log(size);
+  if (size > 100) {
+    clearInterval(aa);
+  } else {
+    indicators.style.width = `${size}%`;
+    indicators.style.background = "white";
+    size += 10;
+  }
+}
+
+let aa = setInterval(aaa, 200);
 
 window.addEventListener("load", () => {
   // setGojekVideo();
 
   sliders[0].style.display = "block";
-  indicators[0].style.background = "red";
+  // indicators[0].style.background = "red";
 
   document.addEventListener("scroll", (event) => {
     setNavbar(event);
