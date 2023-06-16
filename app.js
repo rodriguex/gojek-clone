@@ -139,7 +139,7 @@ let automaticSlider = setInterval(() => {
   }
 }, 2000);
 
-let size = 10;
+let size = 5;
 function aaa() {
   console.log(size);
   if (size > 100) {
@@ -147,7 +147,7 @@ function aaa() {
   } else {
     indicators.style.width = `${size}%`;
     indicators.style.background = "white";
-    size += 10;
+    size += 5;
   }
 }
 
