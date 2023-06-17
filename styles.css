@@ -365,127 +365,105 @@ body {
 }
 
 .perks {
-  background: white;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
-  padding: 100px 0;
   position: relative;
+  background: purple;
+  width: 100%;
+  height: 500px;
 }
 
-.perks h2 {
-  color: black;
-  text-align: center;
-  font-size: 50px;
-}
-
-.perks .second-slider {
-  margin-top: 70px;
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-
-.perks .arrows {
+.perks:before,
+.perks:after {
+  display: block;
+  content: "";
   position: absolute;
-  top: 400px;
-  left: 40px;
-  width: 95%;
-  display: flex;
-  justify-content: space-between;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  z-index: 3;
 }
 
-.perks .arrows > div {
-  background: white;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.perks-prev,
+.perks-next {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  width: 50%;
+  height: 100%;
+  transform: translateX(-50%) translateY(-50%) scale(0.8);
   cursor: pointer;
+  background: blue;
 }
 
-.perks .arrows > div:hover {
-  background: #ccc;
+.perks-prev {
+  left: 0;
 }
 
-.perks .arrows > div > i {
-  color: black;
+.perks-next {
+  left: 100%;
 }
 
-.perks .second-slider::-webkit-scrollbar {
-  display: none;
-}
-
-.perks .second-slider .slider {
-  flex: 0 0 45%;
-  width: 1000px;
-  height: 450px;
-  border-radius: 60px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.perks .second-slider .slider-one {
-  background: url("imgs/perksOne.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.perks .second-slider .slider-two {
-  background: url("imgs/perksTwo.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.perks .second-slider .slider-three {
-  background: url("imgs/perksThree.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.perks .second-slider .slider-four {
-  background: url("imgs/perksFour.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-/* .perks .second-slider .slider img {
-  width: 900px;
-  height: 400px;
-} */
-
-.perks .second-slider .slider .div-slider {
-  width: 90%;
-  position: relative;
-  top: -20px;
-}
-
-.perks .second-slider .slider .div-slider h4 {
-  font-size: 26px;
-}
-
-.perks .second-slider .slider .div-slider div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.perks .second-slider .slider .div-slider h4,
-.perks .second-slider .slider .div-slider p {
-  color: white;
-}
-
-.perks .second-slider .slider .div-slider button {
-  margin-top: 20px;
-  border: none;
-  color: white;
+.second-slider {
+  width: 100%;
+  height: 100%;
   background: green;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-weight: bold;
+}
+
+.perks-slider {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  transition: 1s all ease;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.perks-slider:nth-child(1) {
+  left: 0;
+  z-index: 1;
+  transform: translateX(-100%) scale(0.8);
+}
+
+.perks-slider:nth-child(2) {
+  left: 0;
+  z-index: 2;
+  transform: translateX(-50%) scale(0.8);
+}
+
+.perks-slider:nth-child(3) {
+  left: 50%;
+  z-index: 4;
+  transform: translateX(-50%) scale(1);
+}
+
+.perks-slider:nth-child(4) {
+  left: 100%;
+  z-index: 2;
+  transform: translateX(-50%) scale(0.8);
+}
+
+.perks-slider:nth-child(n + 5) {
+  left: 100%;
+  z-index: 3;
+  transform: scale(0.8);
+}
+
+.slider-one {
+  background: url("imgs/perksOne.webp");
+}
+
+.slider-two {
+  background: url("imgs/perksTwo.webp");
+}
+
+.slider-three {
+  background: url("imgs/perksThree.webp");
+}
+
+.slider-four {
+  background: url("imgs/perksFour.webp");
 }
 
 .we-build {

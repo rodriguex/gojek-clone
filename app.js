@@ -122,13 +122,6 @@ let prev = 0;
 let maxIndex = 3;
 let pausedAutomatic = false;
 
-let secondSlider = document.getElementsByClassName("second-slider")[0];
-secondSlider.scrollLeft = 350;
-
-let secondSliderSliders = document.getElementsByClassName("slider");
-let arrows = document.getElementsByClassName("arrows")[0];
-let indexTrack = 3;
-
 let automaticSlider = setInterval(() => {
   if (!pausedAutomatic) {
     sliderLogic();
@@ -139,25 +132,26 @@ let automaticSlider = setInterval(() => {
   }
 }, 2000);
 
-let size = 5;
-function aaa() {
-  console.log(size);
-  if (size > 100) {
-    clearInterval(aa);
-  } else {
-    indicators.style.width = `${size}%`;
-    indicators.style.background = "white";
-    size += 5;
-  }
-}
-
-let aa = setInterval(aaa, 200);
-
 window.addEventListener("load", () => {
   // setGojekVideo();
 
-  sliders[0].style.display = "block";
+  // sliders[0].style.display = "block";
   // indicators[0].style.background = "red";
+
+  let perks = document.querySelector(".perks");
+  let perksSlider = document.querySelectorAll(".perks-slider");
+
+  let prev = document.querySelector(".perks-prev");
+  prev.addEventListener("click", function () {
+    perks.insertBefore(perksSlider[perksSlider.length - 1], perksSlider[0]);
+    perksSlider = document.querySelectorAll(".perks-slider");
+  });
+
+  let next = document.querySelector(".perks-next");
+  next.addEventListener("click", function () {
+    perks.appendChild(perksSlider[0]);
+    perksSlider = document.querySelectorAll(".perks-slider");
+  });
 
   document.addEventListener("scroll", (event) => {
     setNavbar(event);
