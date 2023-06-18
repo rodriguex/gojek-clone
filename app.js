@@ -138,18 +138,21 @@ window.addEventListener("load", () => {
   // sliders[0].style.display = "block";
   // indicators[0].style.background = "red";
 
-  let perks = document.querySelector(".perks");
+  let secondSlider = document.querySelector(".second-slider");
   let perksSlider = document.querySelectorAll(".perks-slider");
 
   let prev = document.querySelector(".perks-prev");
   prev.addEventListener("click", function () {
-    perks.insertBefore(perksSlider[perksSlider.length - 1], perksSlider[0]);
+    secondSlider.insertBefore(
+      perksSlider[perksSlider.length - 1],
+      perksSlider[0]
+    );
     perksSlider = document.querySelectorAll(".perks-slider");
   });
 
   let next = document.querySelector(".perks-next");
   next.addEventListener("click", function () {
-    perks.appendChild(perksSlider[0]);
+    secondSlider.appendChild(perksSlider[0]);
     perksSlider = document.querySelectorAll(".perks-slider");
   });
 

@@ -368,9 +368,9 @@ body {
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
   position: relative;
-  background: purple;
   width: 100%;
   height: 500px;
+  overflow: hidden;
 }
 
 .perks:before,
@@ -388,12 +388,30 @@ body {
 .perks-next {
   position: absolute;
   top: 50%;
-  z-index: 4;
+  z-index: 6;
   width: 50%;
   height: 100%;
   transform: translateX(-50%) translateY(-50%) scale(0.8);
   cursor: pointer;
-  background: blue;
+}
+
+.perks-prev i,
+.perks-next i {
+  position: relative;
+  top: 50%;
+  font-size: 40px;
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.perks-prev i {
+  left: 55%;
+}
+
+.perks-next i {
+  left: 30%;
 }
 
 .perks-prev {
@@ -407,7 +425,6 @@ body {
 .second-slider {
   width: 100%;
   height: 100%;
-  background: green;
 }
 
 .perks-slider {
@@ -418,6 +435,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  border-radius: 110px;
 }
 
 .perks-slider:nth-child(1) {
