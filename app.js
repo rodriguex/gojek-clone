@@ -139,20 +139,14 @@ window.addEventListener("load", () => {
   let slider = document.querySelector(".second-slider");
   let item = document.querySelectorAll(".perks-slider");
 
-  slider.scrollLeft = 400;
-
   prev.onclick = () => {
-    slider.scrollLeft -= 1000;
+    slider.insertBefore(item[item.length - 1], item[0]);
+    item = document.querySelectorAll(".perks-slider");
   };
 
   next.onclick = () => {
-    if (slider.scrollLeft + 1000 >= slider.offsetWidth) {
-      console.log(slider.scrollLeft, slider.offsetWidth);
-      slider.offsetWidth += 1000;
-      slider.insertBefore(item[item.length - 1], item[0]);
-      item = document.querySelectorAll(".perks-slider");
-    }
-    slider.scrollLeft += 1000;
+    slider.appendChild(item[0]);
+    item = document.querySelectorAll(".perks-slider");
   };
 
   document.addEventListener("scroll", (event) => {
