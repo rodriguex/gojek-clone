@@ -132,29 +132,28 @@ let automaticSlider = setInterval(() => {
   }
 }, 2000);
 
+let aa = 0;
 window.addEventListener("load", () => {
-  // setGojekVideo();
+  let prev = document.querySelector(".jonson-prev");
+  let next = document.querySelector(".jonson-next");
+  let slider = document.querySelector(".second-slider");
+  let item = document.querySelectorAll(".perks-slider");
 
-  // sliders[0].style.display = "block";
-  // indicators[0].style.background = "red";
+  slider.scrollLeft = 400;
 
-  let secondSlider = document.querySelector(".second-slider");
-  let perksSlider = document.querySelectorAll(".perks-slider");
+  prev.onclick = () => {
+    slider.scrollLeft -= 1000;
+  };
 
-  let prev = document.querySelector(".perks-prev");
-  prev.addEventListener("click", function () {
-    secondSlider.insertBefore(
-      perksSlider[perksSlider.length - 1],
-      perksSlider[0]
-    );
-    perksSlider = document.querySelectorAll(".perks-slider");
-  });
-
-  let next = document.querySelector(".perks-next");
-  next.addEventListener("click", function () {
-    secondSlider.appendChild(perksSlider[0]);
-    perksSlider = document.querySelectorAll(".perks-slider");
-  });
+  next.onclick = () => {
+    if (slider.scrollLeft + 1000 >= slider.offsetWidth) {
+      console.log(slider.scrollLeft, slider.offsetWidth);
+      slider.offsetWidth += 1000;
+      slider.insertBefore(item[item.length - 1], item[0]);
+      item = document.querySelectorAll(".perks-slider");
+    }
+    slider.scrollLeft += 1000;
+  };
 
   document.addEventListener("scroll", (event) => {
     setNavbar(event);
