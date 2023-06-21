@@ -139,6 +139,8 @@ window.addEventListener("load", () => {
   let slider = document.querySelector(".second-slider");
   let item = document.querySelectorAll(".perks-slider");
 
+  console.log("i was here just passing but i'll go back");
+
   prev.onclick = () => {
     slider.insertBefore(item[item.length - 1], item[0]);
     item = document.querySelectorAll(".perks-slider");
