@@ -39,8 +39,6 @@ function setNavbar(event) {
 }
 
 function sliderLogic(action = "next") {
-  pausedAutomatic = true;
-
   function nextOne() {
     if (whichOne === maxIndex) {
       whichOne = 0;
@@ -67,11 +65,11 @@ function sliderLogic(action = "next") {
     prevOne();
   }
 
-  // sliders[prev].style.display = "none";
-  // sliders[whichOne].style.display = "block";
+  sliders[prev].style.display = "none";
+  sliders[whichOne].style.display = "block";
 
-  // indicators[prev].style.background = "gray";
-  // indicators[whichOne].style.background = "white";
+  indicators[prev].style.background = "gray";
+  indicators[whichOne].style.background = "white";
 
   pausedAutomatic = false;
 }
@@ -84,34 +82,6 @@ function prevSlide() {
   sliderLogic("prev");
 }
 
-function nextSecondSlider() {
-  secondSlider.style.direction = "ltr";
-  if (secondSlider.scrollLeft + 1000 >= secondSlider.offsetWidth) {
-    if (indexTrack === 3) {
-      indexTrack = 0;
-    } else {
-      indexTrack++;
-    }
-    let copy = secondSliderSliders[indexTrack].cloneNode(true);
-    secondSlider.appendChild(copy);
-  }
-  secondSlider.scrollLeft += 1000;
-}
-
-function prevSecondSlider() {
-  secondSlider.style.direction = "rtl";
-  if (secondSlider.scrollLeft - 1000 <= 0) {
-    if (indexTrack === 0) {
-      indexTrack = 3;
-    } else {
-      indexTrack--;
-    }
-    let copy = secondSliderSliders[indexTrack].cloneNode(true);
-    secondSlider.appendChild(copy);
-  }
-  secondSlider.scrollLeft -= 1000;
-}
-
 let initialScroll = 0;
 
 let sliders = document.getElementsByClassName("first-slider-img");
@@ -122,36 +92,31 @@ let prev = 0;
 let maxIndex = 3;
 let pausedAutomatic = false;
 
-let automaticSlider = setInterval(() => {
-  if (!pausedAutomatic) {
-    sliderLogic();
-    sliders[prev].style.display = "none";
-    sliders[whichOne].style.display = "block";
+// let automaticSlider = setInterval(() => {
+//   if (!pausedAutomatic) {
+//     sliderLogic();
+//     sliders[prev].style.display = "none";
+//     sliders[whichOne].style.display = "block";
+//   }
+// }, 2000);
 
-    // indicators[prev].style.background = "gray";
-  }
-}, 2000);
-
-let aa = 0;
 window.addEventListener("load", () => {
-  let prev = document.querySelector(".jonson-prev");
-  let next = document.querySelector(".jonson-next");
-  let slider = document.querySelector(".second-slider");
-  let item = document.querySelectorAll(".perks-slider");
+  // setGojekVideo();
 
-  console.log("i was here just passing but i'll go back");
+  let earthText = document.querySelector(".first-text");
+  let earthImg = document.querySelector(".earth-img");
 
-  prev.onclick = () => {
-    slider.insertBefore(item[item.length - 1], item[0]);
-    item = document.querySelectorAll(".perks-slider");
-  };
-
-  next.onclick = () => {
-    slider.appendChild(item[0]);
-    item = document.querySelectorAll(".perks-slider");
-  };
-
-  document.addEventListener("scroll", (event) => {
+  document.onscroll = (event) => {
     setNavbar(event);
-  });
+
+    if (earthText.getBoundingClientRect().top <= 0) {
+      earthText.style.height = `${500}px`;
+      earthImg.style.position = "absolute";
+      earthImg.style.width = `${90}%`;
+    } else {
+      earthText.style.height = "auto";
+      earthImg.style.position = "block";
+      earthImg.style.width = `${45}%`;
+    }
+  };
 });

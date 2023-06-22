@@ -583,6 +583,7 @@ body {
   align-items: center;
   width: fit-content;
   margin: 0 auto;
+  position: relative;
 }
 
 .earth .first-text h2 {
@@ -604,16 +605,16 @@ body {
 
 .earth .globe {
   width: 100%;
+  /* height: 500px; */
   margin: 100px auto 0 auto;
   display: flex;
   justify-content: center;
-  position: relative;
 }
 
 .earth .globe img {
-  width: 50%;
+  /* position: absolute; */
+  width: 45%;
   rotate: 270deg;
-  z-index: 20;
 }
 
 .earth .globe .cloud {
