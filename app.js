@@ -103,20 +103,32 @@ let pausedAutomatic = false;
 window.addEventListener("load", () => {
   // setGojekVideo();
 
-  let earthText = document.querySelector(".first-text");
+  let globe = document.querySelector(".globe");
+  let firstText = document.querySelector(".first-text");
   let earthImg = document.querySelector(".earth-img");
+  let earthCloud = document.querySelector(".cloud");
+  let globeText = document.querySelector(".globe-text");
 
   document.onscroll = (event) => {
     setNavbar(event);
 
-    if (earthText.getBoundingClientRect().top <= 0) {
-      earthText.style.height = `${500}px`;
+    if (
+      firstText.getBoundingClientRect().top <= -280 ||
+      globeText.getBoundingClientRect().top <= 50
+    ) {
+      firstText.style.display = "none";
+      globe.style.height = `${800}px`;
       earthImg.style.position = "absolute";
-      earthImg.style.width = `${90}%`;
+      earthImg.style.width = `${85}%`;
+      earthImg.style.top = `${250}px`;
+      earthCloud.style.top = `${350}px`;
+      globeText.style.display = "flex";
     } else {
-      earthText.style.height = "auto";
-      earthImg.style.position = "block";
+      globe.style.height = `auto`;
+      earthImg.style.position = "static";
       earthImg.style.width = `${45}%`;
+      earthCloud.style.top = `${40}px`;
+      // globeText.style.display = "none";
     }
   };
 });
