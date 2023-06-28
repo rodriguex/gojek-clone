@@ -112,7 +112,7 @@ window.addEventListener("load", () => {
   document.onscroll = (event) => {
     setNavbar(event);
 
-    console.log("clocking in other day...");
+    console.log("clocking in one more...");
 
     if (
       firstText.getBoundingClientRect().top <= -280 ||
